@@ -1,0 +1,780 @@
+\documentclass[11pt,twocolumn, a4paper]{article}
+\usepackage{siunitx}
+\usepackage{listings}
+\usepackage{natbib}
+\bibliographystyle{plainnat}
+\usepackage{lipsum} % For generating dummy text
+\usepackage[font=small]{caption} % For captions outside of floats
+\usepackage{xcolor}
+\usepackage{amsmath,amsfonts,amsthm} % Math packages
+\usepackage{graphicx}% Include figure files
+\usepackage{mhchem}
+\usepackage{sectsty} % Allows customizing section commands
+\usepackage{listings}
+\usepackage{circuitikz}
+\usepackage{url}
+\allsectionsfont{\centering \normalfont\scshape} % Make all sections centered, the default font and small caps
+\captionsetup{justification=centerlast, singlelinecheck=false}
+\usepackage{overpic}
+\usepackage{siunitx}
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr} % Custom headers and footers
+\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
+\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
+\fancyfoot[L]{} % Empty left footer
+\fancyfoot[C]{} % Empty center footer
+\fancyfoot[R]{\thepage} % Page numbering for right footer
+\renewcommand{\headrulewidth}{0pt} % Remove header underlines
+\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
+\setlength{\headheight}{13.6pt} % Customize the height of the header
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{float}
+\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
+\usepackage{chngcntr}
+\usepackage{minted}
+\usepackage{xcolor} % to access the named colour LightGray
+\definecolor{LightGray}{gray}{0.9}
+\counterwithout{equation}{section}
+\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
+\setlength{\columnseprule}{0.4pt}
+
+
+\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} 
+
+\title{	
+\normalfont \normalsize 
+\textsc{PYU33PP3 JS Physics Laboratory} \\ [25pt] 
+\horrule{0.5pt} \\[0.4cm] 
+\LARGE \textbf{The Zeeman Effect} \\ 
+}
+
+\author{\textbf{Student Name:} Ellen Lyons \\ \textbf{Student Number:} 22336168} 
+
+
+\date{\normalsize\today} 
+\renewcommand{\theequation}{\arabic{equation}}
+
+\begin{document}
+\onecolumn
+\maketitle 
+\small{I have read and understood the plagiarism provisions in the General Regulations of the University Calendar for the current year, found at http://www.tcd.ie/calendar.\\
+I have also read and understood the guide, and completed the ‘Ready Steady Write’ Tutorial on avoiding plagiarism, located at https://libguides.tcd.ie/academic-integrity/ready-steady-write.}
+\begin{tabbing}
+\hspace{10cm} \= \kill
+Signed: \underline{\hspace{5cm}} 
+Date: \underline{\hspace{3cm}}
+\end{tabbing}
+
+\vspace{1cm}
+
+\begin{abstract}
+    The Zeeman effect ws investigated using the red spectral line of Cadmium. Spectra were recorded under longitudinal and transverse magnetic field orientations. The wavelength of Cadmium light was found to be \(657.1\)nm. With increasing current (4A to 7A), clear triplet (transverse) and doublet (longitudinal) structures were observed due to spectral line splitting. The doublet structures had some residual singular peaks The Bohr magneton was determined experimentally as approximately \(10.13 \times 10^{-24}\) J/T with a 9.2\% error. The average wavelength shift \(\Delta \lambda\) values were found to be consistent in both longitudinal and transverse configurations. The Zeeman effec thas uses in atomic physics, and is the prevailing method of measuring magnetic field strengths in atrophysical spectroscopy.
+\end{abstract}
+\newpage
+\tableofcontents
+\section{Introduction and Theory}
+The Zeeman Effect describes the splitting of spectral lines in the presence of a magnetic field due to the interaction between the field and the magnetic moment of electrons. The Zeeman effect was discovered in 1896 by Dutch physicist Pieter Zeeman. He found that, under the presence of a magnetic field, some spectral lines were split into groups of closely spaced lines. The Zeeman effect has helped physicists to study atomic nuclei and megnatic field strengths. The Zeeman effect is the only observational technique available to measure directly the strength of magnetic fields in regions of star formation [6].
+\\
+
+This experiment investigates the normal Zeeman effect using the red line spectrum of Cadmium under longitudinal and transverse wave conditions. The aims of the experiment included to measure the wavelength of Cd in zero magnetic field, to observe the Zeeman triplet, to determine the value of the Bohr magneton, to observe the Zeeman doublet, and to determine the polarization of states. 
+
+\subsection{Atomic States and Angular Momentum}
+
+In an atom, the total angular momentum \( J \) is given by:
+
+\[
+J = L + S
+\]
+
+where:
+
+\begin{itemize}
+    \item \( L \) is the total orbital angular momentum.
+    \item \( S \) is the total spin angular momentum.
+\end{itemize}
+
+The total angular momentum quantum number \( J \) takes values between \( |L - S| \) and \( |L + S| \) in integer steps. The z-component of \( J \) is labeled by the quantum number \( M_J \), which ranges from \( -J \) to \( J \) in integer steps [1].
+
+
+\subsection{Magnetic Moment and the Bohr Magneton}
+
+The Zeeman effect arises due to the interaction between an electron’s orbital magnetic moment and an external magnetic field. The magnetic moment $\mu$ of an electron in a circular orbit is given by:
+
+\[
+\mu = IA = \frac{ev}{2\pi r}\pi r^2 = \frac{evr}{2}
+\]
+
+where $I$ is the orbital current and $A$ is the orbital area. The orbiting electron speed \(v\) is equivalent to a current loop of radius \(r\) and area \(\pi r^2\).  This can be expressed in terms of \(L\), angular momentum: 
+
+\[
+\mu = \frac{e}{2m} L
+\]
+
+which defines the gyromagnetic ratio, $\frac{e}{2m}$.
+
+Using the Bohr model, the angular momentum of an electron is quantized as:
+
+\[L = n\hbar\]
+
+where $n$ is the principal quantum number. For $n = 1$, this results in the definition of the Bohr magneton:
+
+\[\mu_B = \frac{e\hbar}{2m}\]
+
+which serves as a fundamental unit of magnetic moment:
+
+\begin{equation}
+\mu_B = 9.274 \times 10^{-24} \text{ J/T}
+\end{equation}
+[2]
+
+\subsection{Zeeman Effect and Energy Splitting}
+
+When an external magnetic field $B$ is applied, the interaction energy is given by:
+
+\[U = -\mu \cdot B\]
+
+For a magnetic field along the $z$-axis, the component of the magnetic moment is:
+
+\[\mu_z = - \frac{e}{2m} L_z\]
+
+Since orbital angular momentum is quantized, the possible values of $L_z$ are:
+
+\[L_z = m_l \hbar, \quad m_l = 0, \pm1, \pm2, \dots\]
+
+Thus, the interaction energy becomes:
+\[U = - m_l \mu_B B\]
+
+which results in the splitting of spectral lines into multiple components, known as the Zeeman splitting [2].
+
+
+\subsection{Selection Rules}
+Figure \ref{fig:UP1} illustrates the effect of a magnetic field on the energy levels of atomic states. In the absence of a magnetic field, these states are degenerate, meaning they have the same energy. However, when a magnetic field is applied, the levels split due to their interaction with the field. The energy separation between adjacent levels is given by:
+\[
+\Delta E = g \mu_B B
+\]
+where \( \mu_B \) is the Bohr magneton, and \( g \) is the Landé \( g \)-factor which is given by:
+\begin{equation}
+    g = 1+ \frac{J(J+1)+S(S+1)-L(L+1)}{2J(J+1)}
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{UP1.png}
+    \caption{The cause of the normal Zeeman effect. Selection rules allow transitions with only three different energy changes, which results in three different photon frequencies and wavelengths. Taken from [2].}
+    \label{fig:UP1}
+\end{figure}
+
+
+In the absence of a magnetic field, a transition from a $3d$ state to a $2p$ state results in a single spectral line with photon energy $E_i - E_f$. However, once the levels split due to the applied field, it may appear that there are five possible photon energies. \\ 
+
+In reality, only three distinct transitions are allowed. This is due to the conservation of angular momentum, which imposes strict selection rules. The photon involved in a transition carries away one unit of angular momentum ($\hbar$), requiring that the quantum number $l$ must change by 1 and the magnetic quantum number $m_l$ can only change by $\Delta m_l = 0, \pm1$. These conditions define the selection rules. \\ 
+
+ In Figure \ref{fig:UP1}, the allowed transitions are represented by solid arrows. By examining the possible transition energies, one can confirm that only three distinct photon energies arise: the zero-field value $E_i - E_f$, and two shifted values corresponding to $E_i - E_f \pm \mu_B B$. \\
+
+This explanation describes the normal Zeeman effect, which depends solely on the orbital angular momentum of the electron. However, it does not take into account the electron's intrinsic spin angular momentum, which is a key consideration in more complex cases such as the anomalous Zeeman effect. 
+\\ 
+
+The normal Zeeman effect occurs when the total spin \(S = 0\) and the splitting follows simple selection rules. In contrast, the anomalous Zeeman effect occurs when \(S \ne 0\) leading to more complex splitting patterns due to spin-orbit coupling.
+
+The change in wavelength associated with these energy transitions are given as follows:
+\[
+\Delta E = E(\lambda_0) - E(\lambda_0 + \Delta \lambda) \approx -\frac{dE}{d\lambda_0}\Delta\lambda \text{ for small } \Delta \lambda)
+\]
+\[
+\frac{dE}{d\lambda_0} = \frac{-hc}{\lambda_0^2}
+\]
+
+\[
+\Delta E = \mu_B g B \text{ where g = 1}
+\]
+
+\begin{equation}\label{eq:bohr}
+    \Rightarrow \Delta \lambda = \frac{\lambda_0^2\mu_BB}{hc}
+\end{equation}
+\subsection{Fabry-Pérot Etalon}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{fabry-perot.png}
+    \caption{Schematic of a Fabry-Pérot inteferometer. The set-up consists of two partially silvered glass plates forming an etalon. Incident light undergoes multiple refelctions, leading to inteference patterns. Taken from [3].}
+    \label{fig:FP}
+\end{figure}
+The Fabry-Pérot etalon is an interferomic device used to analyse spectral lines with high resolution. In this experiment, it was used to measure the splitting of the Cadmium spectral lines. It is composed of an optical cavity with two highly reflective mirrors. Multiple-beam inteference is produced, allowing for high resolution spectra.  A diagram of this device is given in Figure \ref{fig:FP}.  Incident light undergoes multiple reflections, leading to inteference patterns.  The sharpness of the fringes in the etalon is due to the high reflectivity of the surfaces. This produced narrow, well-defined peaks in the intensity spectra. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{etalon.schematic.png}
+    \caption{Diagram illustrating the Fabry-Pérot setup. Light from \(O\) undergoes mutiple reflections within the etalon (\(E\)), producing inteference. The angles \(\alpha\) and \(\beta\) represent the incident and reflected angles, respectively. A lens, \(L_2\), focuses the ligh to form a pattern at \(P\). The plate seperation is given by \(d\). Taken from [1].}
+    \label{fig:et}
+\end{figure}
+
+The interference condition is derived from Snell's law:
+\begin{equation}
+    n \sin \beta = \sin \alpha
+\end{equation}
+
+For each successive reflection inside the etalon, light travels down the medium by a distance \(d\). Then it travels back up a distance \(d\).  The light travels at an angle \(\beta\), hence the actual distance travelled per full reflection is  is \(2d\cos\beta\).  The optical path lenth is given by the geometric path of the reflection mulitplied by the refractive index \(n\):
+\begin{equation}
+    \Delta = 2nd\cos\beta
+\end{equation}
+The angles \(\alpha\) and \(\beta \) are very small. Hence the following relationship holds:
+\[
+n = \frac{\sin \alpha}{\sin \beta}
+\]
+\[
+\Rightarrow \beta \approx \frac{\alpha}{n} \text{ since for small angles} \sin x \approx x 
+\]
+If you view the rings in the focal plane of lens \(L_2\), in Figure \ref{fig:et}, the focal length \(f\) and the radius \(r\) are related as:
+\begin{equation}
+    \tan \alpha = \frac{r}{f}
+\end{equation}
+This relationship is illustrated below, in Figure \ref{fig:lens}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{schematic.png}
+    \caption{Schematic illustrating the relationship between the ring radius \(r\), the focal length \(f\)of the lens, and the angle \(\alpha\). The lens, represented as an ellipse, focuses the incident light to form concentric rings at point \(P\). The relationship follows \(\tan \alpha = \frac{r}{f}\), which is used in the analysis of interference patterns in the Fabry-Pérot etalon. Diagram hand-drawn using OneNote for use in the ELN.}
+    \label{fig:lens}
+\end{figure}
+Using this relation, we can rewrite \(\beta\):
+\[
+\Rightarrow \beta \approx \frac{r}{nf}
+\]
+\[
+\Rightarrow \cos \theta \approx 1 - \frac{\beta^2}{2}
+\]
+\[\cos\beta \approx 1 - \frac{r^2}{2n^2f^2}\]
+We can substitute this into the Fabry-Pérot condition:
+\[    m \lambda = 2nd \cos \beta \Rightarrow   m \lambda = 2 n d \left(1 - \frac{r^2}{2 n^2 f^2}\right)\]
+We can introduce a subscript \(m\) that corresponds to the ring order. The order number of a ring refers to the number of wavelengths fitting inside into the optical path difference condition inside the etalon. Higher-order rings correspond to higher values of \(m\). 
+\begin{equation}\label{eq:exp1}
+m \lambda = 2 n d \left(1 - \frac{r_m^2}{2 n^2 f^2}\right)
+\end{equation}
+
+Differentiating  this equation yields a formula for the fractional change in wavelength \(\frac{\Delta \lambda}{\lambda}\):
+
+\begin{equation}\label{eq:wl}
+\frac{\Delta \lambda}{\lambda} = - \frac{r \,\Delta r}{n^2 f^2}
+\end{equation}
+This equation shows how a shift in ring radius, \(\Delta r\), is related to wavelength change. 
+\subsection{Polarisation}
+The lines corresponding to the Zeeman effect also exhibit polarisation effects. In this experiment a linear polariser and a quarter-wave plate are used to carry out measurements to determine the polarisation state of each of the lines. A linear polariser only allows light waves that have an electric field, \(\vec{E}\), component aligned with a specific direction to pass through. The quarter-wave plate introduces a \(90^{\circ}\) phase shift between two perpendicular components of an electric field [1]. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{schematic.polarisation.png}
+    \caption{Illustration of the polarization states in the Zeeman effect. The left and right diagrams represent circularly polarised transitions. The middle diagram represents a linearly polarised transition, which occurs when emission is viewed along the direction of \(\vec{B}\).  Image taken from [4] }
+    \label{fig:pol}
+\end{figure}
+
+Polarisation can be described in classical terms. \(\Delta M_J\) is the angular momentum components of the emitted photons in the direction of the magnetic field. For \(\Delta M_J = 0 \) there is an infinitesimal dipole oscillating parallel to the magnetic field. The \(\pi\)-component cannot be observed parallel to the magnetic field. Light emitted perpendicular to the magnetic field is linearly polarised  [4].  The central schematic in Figure \ref{fig:pol} illustrates linear polarisation. \\ 
+
+For the case of \(\Delta M_J = +1\), most of the quanta travel in the direction of \(\vec{B}\). This corresponds to two parallel dipoles oscillating with a phase difference of \(90^{\circ}\). The circular current is induced by the superposition of the two dipoles. Circularly polarised light is emitted in the direction of the magnetic field; clockwise for \(\Delta M_J = +1\) and anti-clockwise for \(\Delta M_J = -1\), as seen in Figure \ref{fig:pol} [4].
+
+
+
+\section{Apparatus and Method}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{setup .png}
+    \caption{Schematic of the setup for the experiment. \(S\) is the Cadmium light source, $M$ is the magnet, $L_1$ and $L_2$ are the lenses, $E$ is the etalon, $F$ is the filter and $C$ is the camera or eyepiece. When assessing the polarisation, a linear polariser and a quarter-wave plate were added between $L_1$ and $E$. Taken from [1].}
+    \label{fig:apparatus}
+\end{figure}
+\subsection{Determining the wavelength of the cadmium red line}
+The apparatus was set-up as shown in Figure \ref{fig:apparatus}. Care was taken to ensure that each component was in line with each other, and perpendicular. The ring pattern was initially viewed through the eyepiece to ensure optical components were indeed on a common axis. The lenses were adjusted until the sharpest view of the rings was obtained. The eyepiece was replaced with the CCD (VideoCom). The clearest spectrum possible without saturation was obtained. The values of the ring radii, \(r_m\),  were obtained for the first 10 rings. To convert pixel number to quantifiable values the following conversion formula was given by the lab manual: 
+\begin{equation}\label{eq:conversion}
+    \Delta x = \Delta p \times 14 \mu\text{m}
+\end{equation}
+The value of the Cadmium wavelength can hence be found using Equation \eqref{eq:exp1}. This value was compared to the literature value of Cadmium light wavelength. 
+
+\subsection{Transverse Normal Zeeman Effect}
+In this experiment the high current power supply is attached to the Cadmium bulb and is used to induce a magnetic field. The high current power supply was turned on, ensuring that the current knob was set to \(0\) initially. The value of current was gradually increased, never exceeding \(7\)A, and the pattern was observed using the eyepiece.  Care was taken to prevent the coils of the electromagnet from overheating, in other words the apparatus was not left unattended. The intensity spectra for \(I = 4,5,6,\) and $7$A were recorded and in each case the values of \(r\) and \(\Delta r\) were tabulated. The mean value of \(r \Delta r\) was plotted versus \(B\), using Table \ref{tab:magnetic_field}, to show that \(\Delta \lambda \varpropto B \).  Hence the value of the Bohr magneton was computed using Equation \ref{eq:bohr}. \\ 
+\begin{table}[H]
+\caption{Magnetic field strength \( B \) (in mT) measured at different currents \( I \) (in A) during increasing and decreasing current cycles.}
+    \centering
+    \begin{tabular}{|c|c||c|c|}
+        \hline
+        \textit{I} [increasing] (A) & \textit{B} (mT) & \textit{I} [decreasing] (A) & \textit{B} (mT) \\
+        \hline
+        4 & 394 & 7 & 594 \\
+        5 & 485 & 6 & 555 \\
+        6 & 552 & 5 & 493 \\
+        7 & 594 & 4 & 407 \\
+        \hline
+    \end{tabular}
+    
+    \label{tab:magnetic_field}
+\end{table}
+
+The polarisation state of each of the triplet lines was determined. A linear polariser was placed into the apparatus in Figure \ref{fig:apparatus}. The linear polariser was used to collect data for two different polarisation states, which were then overlayed on a graph with an unpolarised spectrum and analysed. 
+
+\subsection{Longitudinal Normal Zeeman Effect}
+To view the fringe patterns for the longitudinal Zeeman effect, the magnet and bulb component was rotated \(90^{\circ}\). For \(I = 5,6,\) and $7$A, the  \(r \Delta r\) was computed as before and \(\Delta \lambda\) was computed. The polarisation state of each of the doublet  lines was determined. A linear polariser and a quarter-wave plate were placed into the apparatus in Figure \ref{fig:apparatus}. As before, the polarisation states were analysed by plotting the intensity spectra for two different states along with the unpolarised spectrum on one graph. 
+
+
+
+\section{Results and Discussion}
+\subsection{Determining the wavelength of the cadmium red line}
+The Cadmium rings were observed through the eyepiece. In Figure \ref{fig:faint}, we observe faint and blurred rings, indicative that the lenses are not correctly aligned. After adjusting the lenses, the desired sharp image of the rings was obtained, see Figure \ref{fig:clear}.
+\begin{figure}[htbp]
+    \centering
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{blurrycad.png}
+        \caption{Faint view of Cadmium rings.}
+        \label{fig:faint}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{clearcad.png}
+        \caption{Clear view of Cadmium rings. }
+        \label{fig:clear}
+    \end{minipage}
+    \caption{Images observed through the Fabry-Pérot etalon.\textit{(Left)} The initial alignment of the etalon showing a faint circular pattern with crosshair markers.\textit{(Right)} A well-aligned etalon setup producing clear concentric interference fringes, demonstrating the multiple-beam interference pattern used to measure spectral line separations. }
+\end{figure}
+The intensity spectrum in Figure \ref{fig:I=0} was obtained for the cadmium red light with no magnetic field applied. The intensity of the peaks decreases as pixel number moves away from the centre due to beam divergence. The peaks are a result of constructive interference in the Fabry-Perót interferometer. Each tall ``spike” (local maximum) corresponds to one bright fringe of the Fabry–Pérot pattern. The deep valley at \(x \approx 850\) is where the Fabry–Pérot pattern may have a minimum (or the “central fringe” is off to one side). 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{I=0.png}
+    \caption{Intensity Spectrum of Cadmium Light with No Applied Magnetic Field. Recorded intensity (\%) is a function of pixel number. The central peak corresponds to the zero-order maximum, with symmetric higher-order rings on both sides.}
+    \label{fig:I=0}
+\end{figure}
+
+To determine the ring radii, the distance between the peaks, in terms of pixel number, was determined and then divided by 2. This is repeated for \(m=10\), in other words, the first 10 peaks.  
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{peakdist.png}
+    \caption{Intensity Spectrum of Cadmium Light with the first peak distance labelled. This distance was noted in terms of pixel number, dived by 2 and multiplied by the conversion factor to obtan the ring radii. This is repeated for the first 10 peaks.}
+    \label{fig:peakdist}
+\end{figure}
+
+From \ref{fig:peakdist}, the values of radii were computed using Equation \ref{eq:conversion}. A table this data is given in the appendix, see Table \ref{tab:experiment1}. These values were used to plot Figure \ref{fig:mvr}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{part1.png}
+    \caption{Plot of Ring Radii, \(r_m^2\) vs. Ring Number, \(m\). The data points, obtained from the intensity spectrum, are fitted with a linear regression (red dashed line). The slope of this fit is used to determine the wavelength \(\lambda_0\) of the cadmium red line.}
+    \label{fig:mvr}
+\end{figure}
+Using Equation \ref{eq:exp1} and the slope of \(5.385e-6\) from Figure \ref{fig:mvr}, the wavelength of Cadmium red can be calculated. 
+\[
+m \lambda = 2 n d \left(1 - \frac{r_m^2}{2 n^2 f^2}\right)
+\]
+\[
+\Rightarrow m\lambda = 2nd - \frac{2nd}{2n^2f^2}r_m^2
+\]
+\[
+\Rightarrow m\lambda = 2nd - \frac{d}{nf^2}r_m^2
+\]
+From the plot in Figure \ref{fig:mvr}, \(r_m^2\) as the dependent variable and $m$ as the independent variable. 
+\[
+r_m^2 = -\frac{nf^2}{d}m\lambda + \frac{2n^2f^2}{d}d
+\]
+If we compare with \(y = mx + c\):
+\[
+\text{slope} = \frac{nf^2}{d}\lambda
+\]
+Hence, the wavelength of Cadmium, given that the refractive index is \(n = 1.457 \) and the mirror spacing in the etalon is \(d = 150\)mm. 
+\[
+\lambda_0 = -\frac{(5.385 \times 10^{-6})(4 \times 10^{-3})}{(1.457) \, (150 \times 10^{-3})^2}
+\]
+\[
+\lambda_0 = 657.1 \text{nm}
+\]
+Cadmium has a prominent red spectral line at 643.8469 nm [5]. Hence our obtained result is has an associated 2.06\% percentage error. 
+
+\subsection{Transverse Normal Zeeman Effect}
+Figure \ref{fig:three_diagrams} shows the ring patterns observed with the eyepiece for \(I=0,4,\) and 7A. As current increases, there is more ring distortion since the magnetic field is splitting the spectral lines. 
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{I=0exp2.jpeg}
+        \caption{Ring pattern observed for no applied current}
+        \label{fig:ringsI0}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{I=4exp3.jpeg}
+        \caption{Ring pattern observed for \(I=4\)A}
+        \label{fig:ringsI4}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{I=7Aexp2.jpeg}
+        \caption{Ring pattern observed for \(I=7\)A}
+        \label{fig:ringsI7}
+    \end{minipage}
+    \caption{Ring patterns observed in the transverse normal Zeeman effect for different applied currents. The leftmost image shows the ring pattern with no applied current, while the middle and right images show the ring patterns with increasing current values of \(I=4\)A and \(I=7\)A, respectively. The shift and distortion in the rings illustrate the effect of the magnetic field on the interference pattern. }
+    \label{fig:three_diagrams}
+\end{figure}
+In the spectra in Figure \ref{fig:five_spectra_grid}, there are some key observations as more current is applied, and hence a stronger magnetic field is induced.  The spectrum corresponding to \(I=0\)A has clear, isolated peaks, as in the previous section. As current is increased, the peaks start to split, and we can observe the expected triplets. There is also a clear splitting of the central spectral feature as the magnetic field increases. The energy that was originally concentrated in that single peak is now distributed among the new spectral components. 
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{I=0.2.0.png}
+        \caption{Spectrum recorded with no applied current, showing the base intensity distribution without magnetic field influence. }
+        \label{fig:spectrum1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{I=4.png}
+        \caption{Spectrum recorded at \(I=4\)A, showing the initial change in peak positions and intensities.}
+        \label{fig:spectrum2}
+    \end{minipage}
+    
+    \vspace{0.5cm} % Space between rows
+    
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{I=5A.png}
+        \caption{Spectrum recorded at \(I=5\)A}
+        \label{fig:spectrum3}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{I=6A.png}
+        \caption{Spectrum recorded at \(I=6\)A highlighting an observable intensity drop.}
+        \label{fig:spectrum4}
+    \end{minipage}
+    \caption{Comparison of four spectra recorded under different current conditions, illustrating the effects of increasing magnetic field strength on peak splitting and intensity variations. The progression highlights the Zeeman effect, where spectral lines shift and split due to the interaction between the magnetic field and atomic energy levels. }
+    \label{fig:five_spectra_grid}
+\end{figure}
+
+At the maximum permitted current, $7A$, the spectrum in Figure \ref{fig:7A} was obtained. Noticeable splittings in peak positions have occurred. The green arrow labels indicate the wavelength shifts that correspond to the separation of spectral components. These 2 shifts fall on either side of a weaker, central peak, which is indicative of the triplet structure that is expected. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{I=7A.png}
+    \caption{Spectrum recorded at $I=7A$ showing the effect of the applied magnetic field on peak positions. The arrows indicate the wavelength shifts \(-\Delta \lambda\) and \(+\Delta \lambda\) due to the Zeeman effect, where spectral lines experience splitting as a result of the interaction between the magnetic field and atomic energy levels. }
+    \label{fig:7A}
+\end{figure}
+
+
+For the intensity spectra corresponding to \(I = 4,5,6,\) and $7$A, the values of \(r\) and \(\Delta r\) were calculated. This was done in a similar manner to the first section. The plot below, in Figure \ref{fig:exp2arrow}, shows how \(\Delta P \) and \(\Delta p\) were calculated. These were multiplied by the conversion factor from Equation \ref{eq:conversion}. to obtain 'diameter' values in mm, \(D\) and \(\Delta D\). These are then halved to obtain \(r\) and \(\Delta r\).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{exp2.arrows.png}
+    \caption{Spectrum recorded at $I=7A$, highlighting the measurement of pixel separations between spectral peaks. The red arrows indicate the pixel gaps used to determine ring displacement due to the applied magnetic field. }
+    \label{fig:exp2arrow}
+\end{figure}
+The calculations completed for \(I=4A\) are given in Table \ref{tab:values_4A}. It is observed that the mean value of \(r \Delta r\) is approximately constant. The rest of the tables, for \(I=5,6,\) and $7A$, are given in the Appendix of this report.  From each of these tables of data, the mean value of \(r\Delta r\) was calculated and then plotted against \(B\). 
+\begin{table}[H]
+    \centering
+    \caption{Table of values of pixel differences to radii lengths, taken from the intensity spectrum corresponding to the transverse Zeeman effect for an applied current \(I=4\)A.}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+        \hline
+        \( m \) & \( \Delta P \) & \( \Delta p \) & \( D\) (mm) & \( \Delta D \) (mm) & \( r \) (mm) & \( \Delta r \) (mm) & \( r \Delta r \) (mm$^2$) \\
+        \hline
+        6 & 283 & 39.65 & 3.962 & 0.5551 & 1.981 & 0.27755 & 0.54982655 \\
+        5 & 434 & 27 & 6.076 & 0.378 & 3.038 & 0.189 & 0.574182 \\
+        4 & 547 & 21 & 7.658 & 0.294 & 3.829 & 0.147 & 0.562863 \\
+        3 & 639 & 18 & 8.946 & 0.252 & 4.473 & 0.126 & 0.563598 \\
+        2 & 720 & 16 & 10.08 & 0.224 & 5.04 & 0.112 & 0.564448 \\
+        1 & 792 & 14 & 11.088 & 0.196 & 5.544 & 0.098 & 0.543312 \\
+        \hline
+    \end{tabular}
+    \label{tab:values_4A}
+\end{table}
+This plot is given in Figure \ref{fig:rdrB}. The slope obtained is \(1.57e-6 \). From this, a value of the Bohr magneton can be computed using Equation \ref{eq:bohr}.
+
+
+\[
+\mu_B = \left(\frac{r\,\Delta r}{B}\right) \frac{hc}{\lambda_0\ n^2 f^2}
+\]
+\[
+\mu_B = \left(slope\right) \frac{hc}{\lambda_0\ n^2 f^2}
+\]
+\[
+\mu_B = \left( 1.57 \times 10^{-6}  \right) \frac{6.626 \times 10^{-34}(3 \times 10^{8})}{(657.1 \times 10^{-9})\ (1.457)^2 (150 \times 10^{-3})^2}
+\]
+\[
+\Rightarrow \mu_B \approx 10.13 \times 10^{-24}
+\]
+The expected value of the Bohr magneton is \(9.274 \times 10^{-24}\) J/T. Hence the associated percentage error is 9.2\%.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{rdrB.png}
+    \caption{Plot of \(r\Delta r\) against the magnetic field $B$. The blue points represent the experimental data, while the dashed orange line indicates the best-fit linear regression.}
+    \label{fig:rdrB}
+\end{figure}
+The plot in Figure \ref{fig:exp2pol} illustrates the intensity spectra obtained for different polarisation conditions in the transverse Zeeman effect experiment. The blue curve corresponds to the unfiltered light. The green curve corresponds to light transmitted through a polariser oriented perpendicular to the applied magnetic field.  The orange curve corresponds to light transmitted through a polariser oriented parallel to the magnetic field. It is evident that the total intensity decreases significantly when a polarisation filter is applied. This indicates that the emitted light has a preferential polarisation due to the Zeeman effect.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{polarisation.png}
+    \caption{Intensity spectra for unfiltered light, \(90^{\circ}\) polarised light, and \(0^{\circ}\) polarised light in the transverse Zeeman effect experiment. The current applied was $5A$ in all cases, and the variations in intensity demonstrate the polarisation dependence of the emitted light. }
+    \label{fig:exp2pol}
+\end{figure}
+The central peak becomes less prominent for the filtered light. In the transverse Zeeman effect, the emitted spectral lines split into three components: \(\pi\) (unshifted central component) and two \(\sigma\) (shifted) components. The \(\pi\) component is linearly polarised parallel to the magnetic field, whereas the \(\sigma\) components are circularly polarised in opposite directions. This is what was expected based off the selection rules outlined in the theory. 
+
+\subsection{Longitudinal Normal Zeeman Effect}
+The bulb was rotated 90 degrees. This changes the orientation of the applied magnetic field relative to the observation direction. When a magnetic field is applied, and the Zeeman effect occurs, only two $\sigma$ components should be observed (circularly polarised in opposite directions), as the $\pi$ component disappears due to its polarisation. The selection rules dictate that in the longitudinal configuration, light observed along the field direction is purely circularly polarised.  However,  the intensity spectra obtained in Figure \ref{fig:four_spectra_grid} had the presence of small residual peaks. This suggests that there may be slight misalignment in the experimental setup or imperfections in the polarisation filtering. 
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{exp3.I0.png}
+        \caption{Spectrum recorded with no applied current, showing the base intensity distribution without magnetic field influence.}
+        \label{fig:exp3spectrum1}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{exp3.I5.png}
+        \caption{Spectrum recorded at \(I=5\)A, showing the initial effects of the applied current, including peak shifting and intensity redistribution.}
+        \label{fig:exp3spectrum2}
+    \end{minipage}
+    
+    \vspace{0.5cm} % Space between rows
+    
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{exp3.I6.png}
+        \caption{Spectrum recorded at \(I=6\)A.}
+        \label{fig:exp3spectrum3}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{exp3.I7.png}
+        \caption{Spectrum recorded at \(I=7\)A. The red arrows indicate a few of the unexpected peaks, which are present throughout the spectrum. }
+        \label{fig:exp3spectrum4}
+    \end{minipage}
+    \caption{ Comparison of spectra recorded under different current conditions in the longitudinal Zeeman setup. The expected doublet structure is observed for applied current, as only the circularly polarised \(\sigma\) components are detected, while the linearly polarised \(\pi\)-component should be absent. However, slight deviations from a perfect doublet suggest the possible presence of a residual \(\pi\) component or misalignment effects. The variations in intensity further illustrate the influence of increasing current on the Zeeman splitting.}
+    \label{fig:four_spectra_grid}
+\end{figure}
+Ideally the apparatus would have been adjusted until perfect alignment was obtained, however this is a very time-consuming task. This was the final hour of the 12 hour laboratory session, hence there was insufficient time to obtain a clearer spectrum. Despite some misalignment, the key spectral features, such as peak positions and Zeeman splitting, remain clearly observable and analysable.  Hence the analysis was completed regardless. \\
+
+As before, the values of \(r \Delta r\) were computed from the spectra. Then, using Equation \ref{eq:wl}, the values of \(\Delta \lambda\) were calculated for each applied current. These tables of data are given in the Appendix.  The average value of \(\Delta \lambda\) in the longitudinal  setup was compared to that of the transverse setup. From Table \ref{tab:delta_lambda_comparison}, it can be observed that each component of the Zeeman doublet is shifted symmetrically by the same value of \(\Delta \lambda\). The slight misalignment in the longitudinal setup did not significantly affect results, as there is consistency across the average values. This consistency aligns with the theory; the \(\sigma\) components shift symmetrically with respect to a central peak. 
+
+\begin{table}[H]
+\centering
+\caption{Table of values of average $\Delta \lambda$ for the longitudinal and transverse case.}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{Current (A)} & \textbf{Transverse $\Delta \lambda$ (nm)} & \textbf{Longitudinal $\Delta \lambda$ (nm)} & \textbf{\% Difference} \\
+\hline
+5 & 9.58 & 9.99 & 4.19 \\
+6 & 10.79 & 11.139 & 3.10 \\
+7 & 11.82 & 12.04 & 1.84 \\
+\hline
+\end{tabular}
+\label{tab:delta_lambda_comparison}
+\end{table}
+
+Finally, the polarisation state of the longitudinal Zeeman effect was investigated. The graph in Figure \ref{fig:exp3pol} was obtained by using a linear polariser and a quarter-wave plate. Since the $\vec{B}$ field lies parallel to the direction of observation, only circularly polarised components are observed. The \(\pi\) component of the polarisation is minimised in this case, since the residual intensity is due to the alignment issues, as discussed. The green and orange lines in Figure \ref{fig:exp3pol} follow a symmetrical pattern which is indicatve of the circularly polarised light. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{exp3.polarisation.png}
+    \caption{Intensity spectra for various polarisation states. The drop in intensity with the addition of filters confirms the presence of circularly polarised \(\sigma\) components and the absence of the linearly polarised \(\pi\) component.}
+    \label{fig:exp3pol}
+\end{figure}
+
+\section{Sources of Error and Uncertainty}
+A key source of error in this experiment, as with many optical experiments, is the alignment of the components. It is quite challenging to get each component successfully aligned in order to obtain the sharpest view of the rings. Misalignment of the apparatus can lead to inaccurate ring radii measurements. Care was taken to ensure the Fabry-Pérot etalon and the lenses were correctly aligned. Even a small displacement of the bulb can lead introduce unwanted peaks in the longitudinal set-up, as discussed in Section 3.3. \\ 
+
+Measurement of the pixel distances from images is subject to human error. In Section 2.1, when attempting to measure the wavelength of the Cadmium light source, the ring radii were initially miscalculated. this yielded the graph in Figure \ref{fig:exp1error}. This plot yielded a value of Cadmium wavelength of \(827\)nm, which highlights the importance of accurate and diligent measurements of ring radii. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{exp1.error.png}
+    \caption{Plot of \(r_m^2\) versus \(m\) using miscalculated pixel distances corresponding to an attempt to measure the wavelength of Cadmium red. The linear fit gives a slope corresponding to a deduced wavelength of approximately $827$ nm for the Cadmium source, significantly deviating from expected values. }
+    \label{fig:exp1error}
+\end{figure}
+
+The percentage difference calculated in Section 3.3 was computed by taking the \% difference relative to the longitudinal \(\Delta \lambda\) and the \% difference relative to the transverse \(\Delta \lambda\), and finding the average of the two. Given below is the Python code used to calculate this.
+\begin{minted}
+[
+frame=lines,
+framesep=2mm,
+baselinestretch=1.2,
+bgcolor=LightGray,
+fontsize=\footnotesize
+]
+{python}
+# Define the paired values for transverse and longitudinal Δλ in nm
+transverse = [9.58, 10.79, 11.82]
+longitudinal = [9.99, 11.13, 12.04]
+
+# Calculate average Δλ
+avg_lambda = [(t + l) / 2 for t, l in zip(transverse, longitudinal)]
+
+# Calculate % difference using average as the denominator
+percent_diffs = [abs(l - t) / avg * 100 for t, l, avg in zip(transverse, longitudinal, avg_lambda)]
+
+percent_diffs
+\end{minted}
+Another source of error is if the linear CCD does not pass through the exact centre of the concentric ring pattern, the measured ring radius will be systematically larger or smaller than the true radius. Since the measured ring radius directly enters the equations for determining the wavelength, any offset translates into a systematic error.  Care was taken to align the CCD correctly by making small tilts until a central bright/dark fringe aligns with the CCD zero point. \\ 
+
+I can acknowledge that although not included in this report, all measurements are subject to uncertainties due to alignment precision and resolution limits. Although quite a tedious task, future analysis would benefit from explicitly estimating uncertainties in pixel measurements, conversion factors, and their propagation through to \(\Delta \lambda\). 
+
+\section{Conclusion}
+The experiment aimed to investigate the Zeeman effect by measuring the spectral line splitting of cadmium emission under an applied magnetic field, and to explore the polarisation characteristics of the emitted light in both transverse and longitudinal configurations. The experiment successfully demonstrated both the normal transverse and longitudinal Zeeman effect.  Spectral line splitting was clearly observed. The wavelength of the cadmium red spectral line was determined using the Fabry-Pérot etalon to be approximately $657.1$nm,  within 2.07\% of the accepted value of $643.8$nm. An experimental value of the Bohr magneton was also obtained, \(\mu_B = 10.3 \times 10^{-24}\)J/T, which is within 9\% of the expected value. Polarisation filters confirmed that in the transverse setup, the \(\pi\) component is linearly polarised and \(\sigma\) components are circularly polarised. In the longitudinal setup, \(\pi\) components are suppressed, and \(\sigma\) components remain. Average \(\Delta \lambda\) values in both setups agree within a few percent, reinforcing the reliability of the results despite minor setup imperfections. 
+
+\section{References}
+[1] School of Physics, Zeeman Effect, Junior Sophister Laboratory Manual, Sept. 2024. \\ 
+
+[2] H. D. Young, R. A. Freedman, and A. L. Ford, ``Quantum Mechanics II: Atomic Structure," in \textit{University Physics with Modern Physics}, 15th ed. Pearson, 2020, ch. 41, pp. 1375-1378. \\
+
+[3] R. Nave, ``Fabry-Perot Interferometer," \textit{HyperPhysics}, Georgia State University. [Online] Available: \url{http://hyperphysics.phy-astr.gsu.edu/hbase/phyopt/fabry.html}. [Accessed: Mar. 20, 2025]. \\
+
+[4] Leybold Didactic GmbH, \textit{Instruction Manual for Zeeman Effect Apparatus}. [Online]. Available: \url{https://www.ld-didactic.de/documents/en-US/EXP/P/P6/P6273_e.pdf}. [Accessed: Mar. 21, 2025.]
+
+[5] RP Photonics,     ``Standard spectral lines,” \textit{RP Photonics Encyclopedia}, Mar. 21, 2025. [Online]. Available: \url{https://www.rp-photonics.com/standard_spectral_lines.html}. [Accessed: Mar. 21, 2025]. 
+
+[6] R. M. Crutcher and A. J. Kemball, ``The Zeeman effect in interstellar clouds," \textit{Frontiers in Astronomy and Space Sciences}, vol. 6, 2019. DOI: 10.3389/fspas.2019.00066
+
+\section{Appendix}
+\begin{table}[H]
+    \caption{Table of values used when determining the wavelength of Cadmium light, corresponding to Section 3.1.}
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{ccccc}
+        \hline
+        m & Pixel number & \(\Delta P\) & \(r_m\) (mm) & \(r_m^2\)(mm\textsuperscript{2})} \\
+        \hline
+        1  & 1110 & 126.5  & 1.771  & 3.136441 \\
+        2  & 1190 & 208    & 2.912  & 8.479744 \\
+        3  & 1248 & 266    & 3.724  & 13.868176 \\
+        4  & 1295 & 313.5  & 4.389  & 19.263321 \\
+        5  & 1337 & 355    & 4.970  & 24.7009 \\
+        6  & 1374 & 391.5  & 5.481  & 30.041361 \\
+        7  & 1407 & 426    & 5.964  & 35.569296 \\
+        8  & 1438 & 456.6  & 6.3924 & 40.86277776 \\
+        9  & 1467 & 485    & 6.790  & 46.1041 \\
+        10 & 1495 & 513    & 7.182  & 51.581124 \\
+        \hline
+    \end{tabular}
+    \label{tab:experiment1}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Table of values for the intensity spectrum obtained for\(I=5A\), corresponding to the transverse Zeeman effect (Section 3.2).}
+    \begin{tabular}{c c c c c c c c c}
+        \hline
+        \(m\) & \(\Delta P\) & \(\Delta p\) & \(D\) (mm) & \(\Delta D\) (mm) & \(r\) (mm) & \(\Delta r\) (mm) & \(r\Delta r\) (mm\(^2\)) \\
+        \hline
+        6 & 286 & 52 & 4.004 & 0.728 & 2.002 & 0.364 & 0.728728 \\
+        5 & 437 & 33 & 6.118 & 0.462 & 3.059 & 0.231 & 0.706629 \\
+        4 & 548 & 25 & 7.672 & 0.35  & 3.836 & 0.175 & 0.6713 \\
+        3 & 640 & 23 & 8.96  & 0.322 & 4.48  & 0.161 & 0.72128 \\
+        2 & 721 & 21 & 10.094 & 0.294 & 5.047 & 0.147 & 0.741099 \\
+        1 & 793 & 18 & 11.102 & 0.252 & 5.551 & 0.126 & 0.699426 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+\begin{table}[H]
+    \centering
+    \caption{Table of values for the intensity spectrum obtained for\(I=6A\), corresponding to the transverse Zeeman effect (Section 3.2)..}
+    \begin{tabular}{c c c c c c c c c}
+        \hline
+        \(m\) & \(\Delta P\) & \(\Delta p\) & \(D\) (mm) & \(\Delta D\) (mm) & \(r\) (mm) & \(\Delta r\) (mm) & \(r\Delta r\) (mm\(^2\)) \\
+        \hline
+        6 & 286 & 60 & 4.004 & 0.84  & 2.002 & 0.42  & 0.84084 \\
+        5 & 437 & 38 & 6.118 & 0.532 & 3.059 & 0.266 & 0.813694 \\
+        4 & 548 & 29 & 7.672 & 0.406 & 3.836 & 0.203 & 0.778708 \\
+        3 & 640 & 25 & 8.96  & 0.35  & 4.48  & 0.175 & 0.784 \\
+        2 & 721 & 23 & 10.094 & 0.322 & 5.047 & 0.161 & 0.812567 \\
+        1 & 794 & 20 & 11.116 & 0.28  & 5.558 & 0.14  & 0.77812 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \centering
+    \caption{Table of values for the intensity spectrum obtained for\(I=7A\), corresponding to the transverse Zeeman effect (Section 3.2).}
+    \begin{tabular}{c c c c c c c c c}
+        \hline
+        \(m\) & \(\Delta P\) & \(\Delta p\) & \(D\) (mm) & \(\Delta D\) (mm) & \(r\) (mm) & \(\Delta r\) (mm) & \(r\Delta r\) (mm\(^2\)) \\
+        \hline
+        6 & 287 & 63 & 4.018  & 0.882 & 2.009 & 0.441 & 0.885969 \\
+        5 & 437 & 41 & 6.118  & 0.574 & 3.059 & 0.287 & 0.877933 \\
+        4 & 549 & 33 & 7.686  & 0.462 & 3.843 & 0.231 & 0.887733 \\
+        3 & 640 & 28 & 8.96   & 0.392 & 4.48  & 0.196 & 0.87808  \\
+        2 & 722 & 25 & 10.108 & 0.35  & 5.054 & 0.175 & 0.88445  \\
+        1 & 794 & 22 & 11.116 & 0.308 & 5.558 & 0.154 & 0.855932 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Table of values for the intensity spectrum obtained for\(I=5A\), corresponding to the longitudinal Zeeman effect (Section 3.3).}
+\begin{tabular}{c c c c c c c c c c}
+\hline
+$m$ & $\Delta P$ & $\Delta p$ & $D$ (mm) & $\Delta D$ (mm) & $r$ (mm) & $\Delta r$ (mm) & $r\Delta r$ (mm$^2$) & $\Delta \lambda$ (nm) \\
+\hline
+6 & 281 & 53 & 3.934 & 0.742 & 1.967 & 0.371 & 0.729757 & 9.836206105 \\
+5 & 432 & 36 & 6.048 & 0.504 & 3.024 & 0.252 & 0.762048 & 10.27144815 \\
+4 & 546 & 27 & 7.644 & 0.378 & 3.822 & 0.189 & 0.722358 & 9.736476895 \\
+3 & 639 & 24 & 8.946 & 0.336 & 4.473 & 0.168 & 0.751464 & 10.12878915 \\
+2 & 720 & 21 & 10.08 & 0.294 & 5.040 & 0.147 & 0.740880 & 9.986130149 \\
+1 & 793 & 19 & 11.088 & 0.266 & 5.544 & 0.133 & 0.738283 & 9.951125856 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\centering
+\caption{Table of values for the intensity spectrum obtained for\(I=6A\), corresponding to the longitudinal Zeeman effect (Section 3.3).}
+\begin{tabular}{c c c c c c c c c c}
+\hline
+$m$ & $\Delta P$ & $\Delta p$ & $D$ (mm) & $\Delta D$ (mm) & $r$ (mm) & $\Delta r$ (mm) & $r\Delta r$ (mm$^2$) & $\Delta \lambda$ (nm) \\
+\hline
+6 & 285 & 60 & 3.990 & 0.840 & 1.995 & 0.420 & 0.837900 & 11.29383767 \\
+5 & 438 & 39 & 6.132 & 0.546 & 3.066 & 0.273 & 0.837018 & 11.28194942 \\
+4 & 550 & 31 & 7.700 & 0.434 & 3.850 & 0.217 & 0.835450 & 11.26081475 \\
+3 & 641 & 26 & 8.974 & 0.364 & 4.487 & 0.182 & 0.816634 & 11.00719875 \\
+2 & 683 & 23 & 9.562 & 0.322 & 4.781 & 0.161 & 0.769741 & 10.37514011 \\
+1 & 796 & 22 & 11.144 & 0.308 & 5.572 & 0.154 & 0.858088 & 11.56594651 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\centering
+\caption{Table of values for the intensity spectrum obtained for\(I=7A\), corresponding to the longitudinal Zeeman effect (Section 3.3).}
+\begin{tabular}{c c c c c c c c c c}
+\hline
+$m$ & $\Delta P$ & $\Delta p$ & $D$ (mm) & $\Delta D$ (mm) & $r$ (mm) & $\Delta r$ (mm) & $r\Delta r$ (mm$^2$) & $\Delta \lambda$ (nm) \\
+\hline
+6 & 282 & 66 & 3.948 & 0.924 & 1.974 & 0.462 & 0.911988 & 12.29245068 \\
+5 & 427 & 41 & 5.978 & 0.574 & 2.989 & 0.287 & 0.857843 & 11.56264421 \\
+4 & 548 & 33 & 7.672 & 0.462 & 3.836 & 0.231 & 0.886116 & 11.94372868 \\
+3 & 642 & 28 & 8.988 & 0.392 & 4.494 & 0.196 & 0.880824 & 11.87239918 \\
+2 & 723 & 25 & 10.122 & 0.350 & 5.061 & 0.175 & 0.885675 & 11.93778455 \\
+1 & 795 & 24 & 11.130 & 0.336 & 5.565 & 0.168 & 0.934920 & 12.60154519 \\
+\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
